@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Kirim yoki chiqimni o'chirish{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Kirim yoki chiqimni o'chirish</h2>
+        <p>Haqiqatdan ham "{{ transaction }}" ni o'chirishni xohlaysizmi?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="w-full mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">O'chirish</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
